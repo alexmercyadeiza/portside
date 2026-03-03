@@ -20,7 +20,18 @@ A macOS menu bar app that shows which processes are listening on TCP ports. Buil
 
 Download `Portside.zip` from [Releases](../../releases), unzip, and drag `Portside.app` to your Applications folder.
 
-> Since the app is not signed with a Developer ID, macOS will block it on first launch. Right-click the app → **Open** → click **Open** in the dialog to bypass Gatekeeper. You only need to do this once.
+Since Portside is not notarized, macOS will block it on first launch. Use either method below — you only need to do this once.
+
+**Option A — Privacy & Security (recommended)**
+1. Try to open the app — macOS will show a "damaged" or "cannot be opened" warning
+2. Open **System Settings → Privacy & Security**
+3. Scroll to the **Security** section — you'll see a message about Portside being blocked
+4. Click **Open Anyway**, then confirm
+
+**Option B — Right-click to open**
+1. Right-click (or Control-click) `Portside.app`
+2. Select **Open** from the context menu
+3. Click **Open** in the dialog that appears
 
 ## Build from source
 
