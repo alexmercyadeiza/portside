@@ -3,14 +3,14 @@
 import PackageDescription
 
 let package = Package(
-    name: "Porter",
+    name: "Portside",
     platforms: [
         .macOS(.v14)
     ],
     targets: [
         .executableTarget(
-            name: "Porter",
-            path: "Sources/Porter"
+            name: "Portside",
+            path: "Sources/Portside"
         )
     ]
 )

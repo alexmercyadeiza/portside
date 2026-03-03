@@ -1,6 +1,6 @@
 .PHONY: build run install dist clean
 
-BUILD_NAME = Porter
+BUILD_NAME = Portside
 BUILD_DIR = .build/release
 APP_NAME = Portside
 APP_BUNDLE = $(APP_NAME).app

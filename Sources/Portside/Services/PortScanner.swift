@@ -82,7 +82,13 @@ actor PortScanner {
 
     private func enrich(_ entry: RawEntry) async -> PortProcess? {
         let workDir = await getWorkingDirectory(pid: entry.pid)
-        let projectName = workDir.map { URL(fileURLWithPath: $0).lastPathComponent } ?? entry.command
+        let projectName: String
+        if let workDir,
+           workDir.components(separatedBy: "/").count > 3 {
+            projectName = URL(fileURLWithPath: workDir).lastPathComponent
+        } else {
+            projectName = entry.command
+        }
         var branch: String?
         if let workDir {
             branch = await getGitBranch(directory: workDir)
