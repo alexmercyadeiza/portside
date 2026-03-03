@@ -14,7 +14,8 @@ build:
 	cp $(BUILD_DIR)/$(BUILD_NAME) $(APP_BUNDLE)/Contents/MacOS/$(BUILD_NAME)
 	cp Resources/Info.plist $(APP_BUNDLE)/Contents/Info.plist
 	cp Resources/AppIcon.icns $(APP_BUNDLE)/Contents/Resources/AppIcon.icns
-	@echo "Built $(APP_BUNDLE)"
+	codesign --deep --force --sign - $(APP_BUNDLE)
+	@echo "Built and signed $(APP_BUNDLE)"
 
 run: build
 	open $(APP_BUNDLE)
